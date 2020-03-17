@@ -17,8 +17,18 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.guaguauu.control.LoginServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.guaguauu.control.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 </web-app>

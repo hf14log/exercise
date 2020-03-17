@@ -32,12 +32,18 @@ public class LoginServlet extends HttpServlet {
         response.setCharacterEncoding("gbk");
         //进行判断返回success or false
         if (u !=null){
-            response.getWriter().write("登录成功");
+//            response.getWriter().write("登录成功");
+            //请求转发，会一直请求，并且打印登录信息
+//            request.getRequestDispatcher("hello").forward(request,response);
+            //使用重定向改变地址栏，改变请求,但是数据无法共享了，request和response不是一个了，无法获取用户信息了
+            response.sendRedirect("hello");
+
         }else{
 //            response.getWriter().write("登录失败");
-            //请求转发
+
             //设置参数，实现不同servlet之间的数据共享
             request.setAttribute("str","用户名或密码错误");
+            //请求转发
             request.getRequestDispatcher("page").forward(request,response);
             //后续不需要逻辑代码处理
             return;
